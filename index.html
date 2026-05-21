@@ -1,1 +1,202 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto Agrinho - A Jornada da Semente</title>
+    <style>
+        /* Cores Vibrantes e Estilo Geral */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
 
+        body {
+            background: linear-gradient(135deg, #e8f5e9 0%, #fffde7 100%);
+            color: #2c3e50;
+            padding: 20px;
+        }
+
+        header {
+            background: linear-gradient(45deg, #2ecc71, #27ae60);
+            color: white;
+            padding: 30px;
+            text-align: center;
+            border-radius: 15px;
+            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        header p {
+            font-size: 1.2rem;
+            font-style: italic;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        /* Seção da Jornada */
+        .jornada-section {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+            border-left: 10px solid #8b5a2b;
+        }
+
+        .botoes-jornada {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 20px 0;
+        }
+
+        .btn-etapa {
+            padding: 12px 24px;
+            font-size: 1rem;
+            font-weight: bold;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: transform 0.2s, background-color 0.3s;
+            color: white;
+        }
+
+        .btn-etapa:hover {
+            transform: scale(1.05);
+        }
+
+        /* Cores específicas dos botões */
+        #btn1 { background-color: #8b5a2b; } /* Terra */
+        #btn2 { background-color: #3498db; } /* Água */
+        #btn3 { background-color: #2ecc71; } /* Planta */
+        #btn4 { background-color: #f1c40f; color: #2c3e50; } /* Sol/Colheita */
+
+        .conteudo-etapa {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            min-height: 120px;
+            border: 2px dashed #ccc;
+            margin-top: 15px;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        /* Seção do Quiz (Super Colorido) */
+        .quiz-section {
+            background: linear-gradient(135deg, #ff9f43, #ff5252);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+        }
+
+        .quiz-section h2 {
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .pergunta {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .alternativas {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .btn-alt {
+            background-color: white;
+            color: #2c3e50;
+            border: none;
+            padding: 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.2s;
+            text-align: left;
+        }
+
+        .btn-alt:hover {
+            background-color: #f0f0f0;
+            transform: translateX(5px);
+        }
+
+        #resultado-quiz {
+            margin-top: 15px;
+            font-size: 1.2rem;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            color: #7f8c8d;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>🚜 Agrinho: A Jornada do Alimento 🌱</h1>
+            <p>Descubra a força e a tecnologia do campo na nossa vida!</p>
+        </header>
+
+        <section class="jornada-section">
+            <h2>🌾 Etapas da Produção Agrícola</h2>
+            <p>Clique nos botões coloridos abaixo para acompanhar o caminho que a semente faz até virar comida:</p>
+            
+            <div class="botoes-jornada">
+                <button class="btn-etapa" id="btn1" onclick="mostrarEtapa(1)">1. O Solo 🟤</button>
+                <button class="btn-etapa" id="btn2" onclick="mostrarEtapa(2)">2. A Irrigação 🔵</button>
+                <button class="btn-etapa" id="btn3" onclick="mostrarEtapa(3)">3. O Crescimento 🟢</button>
+                <button class="btn-etapa" id="btn4" onclick="mostrarEtapa(4)">4. A Mesa 🟡</button>
+            </div>
+
+            <div class="conteudo-etapa" id="caixa-conteudo">
+                <p><strong>Clique em uma das etapas acima</strong> para começar a nossa viagem pelo campo!</p>
+            </div>
+        </section>
+
+        <section class="quiz-section">
+            <h2>🎮 Desafio do Agro Quiz!</h2>
+            <div id="quiz-container">
+                <p class="pergunta" id="pergunta-texto">Qual é o principal elemento que a planta precisa para fazer a fotossíntese junto com a água?</p>
+                <div class="alternativas">
+                    <button class="btn-alt" onclick="verificarResposta(false)">A) Refrigerante</button>
+                    <button class="btn-alt" onclick="verificarResposta(true)">B) Luz do Sol ☀️</button>
+                    <button class="btn-alt" onclick="verificarResposta(false)">C) Chocolate</button>
+                </div>
+                <div id="resultado-quiz"></div>
+            </div>
+        </section>
+
+        <footer>
+            <p>Projeto Educativo desenvolvido para o Concurso Agrinho 2026. Feito com amor e tecnologia! 💚</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
