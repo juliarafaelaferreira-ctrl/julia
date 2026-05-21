@@ -1,1 +1,195 @@
+/* ==========================================================================
+   CONFIGURAÇÕES GERAIS E RESET
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
+body {
+    /* Fundo suave com degradê que lembra a transição da natureza */
+    background: linear-gradient(135deg, #e8f5e9 0%, #fffde7 100%);
+    color: #2c3e50;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* ==========================================================================
+   TOPO / HEADER (Super Verde e Chamativo)
+   ========================================================================== */
+header {
+    background: linear-gradient(45deg, #2ecc71, #27ae60);
+    color: white;
+    padding: 35px 20px;
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    border-bottom: 5px solid #2196f3; /* Linha azul representando a água */
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+header p {
+    font-size: 1.2rem;
+    font-style: italic;
+    opacity: 0.9;
+}
+
+/* ==========================================================================
+   SEÇÃO DA JORNADA (Painel Interativo)
+   ========================================================================== */
+.jornada-section {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    margin-bottom: 30px;
+    border-left: 10px solid #8b5a2b; /* Destaque em Marrom Terra */
+}
+
+.jornada-section h2 {
+    color: #27ae60;
+    margin-bottom: 10px;
+}
+
+/* Botões das Etapas */
+.botoes-jornada {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 25px 0;
+}
+
+.btn-etapa {
+    padding: 14px 28px;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 50px; /* Botões arredondados estilo moderninho */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn-etapa:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn-etapa:active {
+    transform: translateY(1px);
+}
+
+/* Cores Temáticas de cada Botão */
+#btn1 { background-color: #8b5a2b; } /* Solo / Marrom */
+#btn2 { background-color: #3498db; } /* Água / Azul */
+#btn3 { background-color: #2ecc71; } /* Planta / Verde */
+#btn4 { background-color: #f1c40f; color: #2c3e50; } /* Sol-Colheita / Amarelo */
+
+/* Caixa de Texto Dinâmica */
+.conteudo-etapa {
+    background-color: #fcfcfc;
+    padding: 25px;
+    border-radius: 12px;
+    min-height: 130px;
+    border: 3px dashed #bdc3c7;
+    margin-top: 20px;
+    font-size: 1.15rem;
+    line-height: 1.6;
+    transition: all 0.4s ease;
+}
+
+.conteudo-etapa h3 {
+    margin-bottom: 8px;
+}
+
+/* ==========================================================================
+   SEÇÃO DO QUIZ (Explosão de Cores quentes)
+   ========================================================================== */
+.quiz-section {
+    background: linear-gradient(135deg, #ff9f43, #ff5252);
+    color: white;
+    padding: 35px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(255, 82, 82, 0.2);
+}
+
+.quiz-section h2 {
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 1.8rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.pergunta {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 1.4;
+}
+
+/* Caixa com as Alternativas */
+.alternativas {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.btn-alt {
+    background-color: white;
+    color: #2c3e50;
+    border: none;
+    padding: 16px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1.05rem;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    text-align: left;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.btn-alt:hover {
+    background-color: #fffde7; /* Leve toque amarelado no foco */
+    transform: translateX(8px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* Mensagem de feedback do Quiz */
+#resultado-quiz {
+    margin-top: 25px;
+    font-size: 1.3rem;
+    text-align: center;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+    min-height: 30px;
+}
+
+/* ==========================================================================
+   RODAPÉ / FOOTER
+   ========================================================================== */
+footer {
+    text-align: center;
+    margin-top: 50px;
+    padding: 20px 0;
+    color: #7f8c8d;
+    font-size: 0.95rem;
+    border-top: 1px solid #dcdde1;
+}
